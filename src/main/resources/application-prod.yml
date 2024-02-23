@@ -1,0 +1,4 @@
+spring:
+  banner:
+    location: baners/logo-prod.txt
+    charset: UTF-8
