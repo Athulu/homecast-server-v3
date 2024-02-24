@@ -1,4 +1,4 @@
-package com.example.homecastserverv3;
+package homecast;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
