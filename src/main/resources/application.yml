@@ -3,6 +3,9 @@ server:
 spring:
   profiles:
     default: prod
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
 application:
   title: ${application.title}
   version: ${application.version}

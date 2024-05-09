@@ -2,3 +2,10 @@ spring:
   banner:
     location: baners/logo-prod.txt
     charset: UTF-8
+  datasource:
+    url: jdbc:postgresql://xxx:xxx/xxx
+    username: xxx
+    password: xxx
+  jpa:
+    hibernate:
+      ddl-auto: create
