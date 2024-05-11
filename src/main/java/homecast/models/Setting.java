@@ -1,6 +1,7 @@
 package homecast.models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,10 +12,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Source {
+public class Setting {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long sourceId;
-    private String mime;
-    private String type;
+    private String property;
+    private String value;
+    private String description;
 }
