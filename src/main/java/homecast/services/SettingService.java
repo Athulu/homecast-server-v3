@@ -2,7 +2,6 @@ package homecast.services;
 
 import homecast.models.Setting;
 import homecast.repositories.SettingRepository;
-import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
