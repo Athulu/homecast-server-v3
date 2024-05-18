@@ -1,6 +1,6 @@
 package homecast.configuration;
 
-public enum FieldTypeEnum {
+public enum TypeEnum {
     STRING,
     BOOLEAN,
     INTEGER;
