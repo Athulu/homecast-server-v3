@@ -5,7 +5,9 @@ import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static homecast.configuration.TypeEnum.STRING;
+import java.util.Optional;
+
+import static homecast.configuration.TypeEnum.*;
 
 public enum SettingProperty {
     DATABASE_USERNAME("DATABASE_USERNAME", STRING),
@@ -16,12 +18,10 @@ public enum SettingProperty {
     @Getter
     private final String property;
     @Getter
-    private String value;
-    private final TypeEnum fieldTypeEnum;
+    private Object value;
 
     SettingProperty(String name, TypeEnum fieldTypeEnum) {
         this.property = name;
-        this.fieldTypeEnum = fieldTypeEnum;
     }
 
     private void setValue(String value) {
@@ -30,6 +30,6 @@ public enum SettingProperty {
 
     public static void init(SettingProperty settingProperty, String value) {
         settingProperty.setValue(value);
-        LOG.info(settingProperty.getProperty() + "\t:\t" + settingProperty.getValue());
+        LOG.info(settingProperty.getProperty() + "\t:\t" + value);
     }
 }

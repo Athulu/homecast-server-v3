@@ -19,19 +19,6 @@ public class TypeConverter {
         else if (BOOLEAN_PATTERN.matcher(value).matches()) return BOOLEAN;
         else return STRING;
     }
-
-    //TODO: konwersja value z bazy danych do odpowiedniego typu
-//    public Object convertStringToDestinyType(String value) {
-//        try {
-//            return Integer.parseInt(value);
-//        } catch (NumberFormatException e) {
-//            LOG.error(e.getMessage());
-//        }
-//        if (BOOLEAN_PATTERN.matcher(value).matches()) {
-//            return Boolean.valueOf(value);
-//        }
-//        return value;
-//    }
 }
 
 
