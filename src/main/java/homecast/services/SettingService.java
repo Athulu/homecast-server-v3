@@ -3,6 +3,7 @@ package homecast.services;
 import homecast.configuration.SettingProperty;
 import homecast.models.Setting;
 import homecast.repositories.SettingRepository;
+import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +28,7 @@ public class SettingService {
                 .collect(Collectors.toMap(Setting::getProperty, Setting::getValue)));
     }
 
+    @PostConstruct
     public void initializeSettings() {
         LOG.info("START initialize settings");
         for (SettingProperty settingProperty : SettingProperty.values()) {
