@@ -1,4 +1,4 @@
-package homecast.configuration;
+package homecast.configuration.utility;
 
 public enum TypeEnum {
     STRING,

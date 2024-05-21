@@ -1,4 +1,4 @@
-package homecast.configuration;
+package homecast.configuration.utility;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.regex.Pattern;
 
-import static homecast.configuration.TypeEnum.*;
+import static homecast.configuration.utility.TypeEnum.*;
 
 @Component
 public class TypeConverter {

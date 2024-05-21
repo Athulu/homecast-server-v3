@@ -1,4 +1,4 @@
-package homecast.configuration;
+package homecast.schedule;
 
 import homecast.services.SettingService;
 import lombok.AllArgsConstructor;
