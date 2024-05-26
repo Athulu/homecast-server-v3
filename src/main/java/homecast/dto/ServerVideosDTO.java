@@ -1,11 +1,16 @@
 package homecast.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Builder
+@Builder(builderClassName = "Builder", access = AccessLevel.PUBLIC)
+@AllArgsConstructor
+@NoArgsConstructor
 public class ServerVideosDTO {
     @JsonProperty("server_url")
     private String serverUrl;

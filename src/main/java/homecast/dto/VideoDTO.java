@@ -1,9 +1,14 @@
 package homecast.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
-@Builder
+@Builder(builderClassName = "Builder", access = AccessLevel.PUBLIC)
+@NoArgsConstructor
+@AllArgsConstructor
 public class VideoDTO {
     @JsonProperty("video_id")
     private Long videoId;
@@ -18,7 +23,7 @@ public class VideoDTO {
     @JsonProperty("thumbnail")
     private String thumbnail;
     @JsonProperty("duration")
-    private Long duration;
+    private Integer duration;
     @JsonProperty("filename")
     private String filename;
     @JsonProperty("source")
