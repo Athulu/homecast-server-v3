@@ -33,6 +33,7 @@ public class VideoService {
                     .source(SourceDTO.create(video.getSource()))
                     .build());
         }
+        LOG.info("Found " + videoDTOList.size() + " videos");
         return videoDTOList;
     }
 }
