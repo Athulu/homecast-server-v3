@@ -14,13 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @AllArgsConstructor
 public class VideoController {
     public final VideoService videoService;
+    public final ServerInfo serverInfo;
 
     @GetMapping("/all")
     public ResponseEntity<ServerVideosDTO> getVideos() {
         return ResponseEntity.ok().body(
                 ServerVideosDTO.builder()
-                        .serverUrl(ServerInfo.getHostAddress())
-                        .serverName(ServerInfo.getHostName())
+                        .serverUrl(serverInfo.getServerUrl())
+                        .serverName(serverInfo.getHostName())
                         .videoDTOList(videoService.getAllVideos())
                         .build()
         );
