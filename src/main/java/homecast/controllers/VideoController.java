@@ -1,5 +1,6 @@
 package homecast.controllers;
 
+import homecast.configuration.ServerInfo;
 import homecast.dto.ServerVideosDTO;
 import homecast.services.VideoService;
 import lombok.AllArgsConstructor;
@@ -16,13 +17,10 @@ public class VideoController {
 
     @GetMapping("/all")
     public ResponseEntity<ServerVideosDTO> getVideos() {
-        //TODO:
-        // set serverUrl
-        // set serverName
         return ResponseEntity.ok().body(
                 ServerVideosDTO.builder()
-                        .serverUrl("serverUrl")
-                        .serverName("serverName")
+                        .serverUrl(ServerInfo.getHostAddress())
+                        .serverName(ServerInfo.getHostName())
                         .videoDTOList(videoService.getAllVideos())
                         .build()
         );
