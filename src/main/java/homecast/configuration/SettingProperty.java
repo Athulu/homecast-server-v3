@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import static homecast.configuration.utility.TypeEnum.STRING;
 
 public enum SettingProperty {
-    IP_ADDRESS("IP_ADDRESS", STRING),
     VIDEOS_DIRECTORY("VIDEOS_DIRECTORY", STRING),
     IMAGES_DIRECTORY("IMAGES_DIRECTORY", STRING),
     BASE_DIRECTORY("BASE_DIRECTORY", STRING);
