@@ -1,4 +1,4 @@
-package homecast.models;
+package homecast.api.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

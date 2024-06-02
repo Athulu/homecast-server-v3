@@ -1,6 +1,6 @@
-package homecast.dto;
+package homecast.api.dto;
 
-import homecast.models.Source;
+import homecast.api.models.Source;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

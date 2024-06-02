@@ -1,8 +1,8 @@
-package homecast.services;
+package homecast.api.services;
 
 import homecast.configuration.SettingProperty;
-import homecast.models.Setting;
-import homecast.repositories.SettingRepository;
+import homecast.api.models.Setting;
+import homecast.api.repositories.SettingRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;

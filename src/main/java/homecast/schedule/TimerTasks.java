@@ -1,6 +1,6 @@
 package homecast.schedule;
 
-import homecast.services.SettingService;
+import homecast.api.services.SettingService;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

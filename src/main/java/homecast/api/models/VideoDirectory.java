@@ -1,4 +1,4 @@
-package homecast.models;
+package homecast.api.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

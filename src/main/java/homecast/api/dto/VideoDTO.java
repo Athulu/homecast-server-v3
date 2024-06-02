@@ -1,4 +1,4 @@
-package homecast.dto;
+package homecast.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;

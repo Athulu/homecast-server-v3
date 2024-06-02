@@ -1,9 +1,9 @@
-package homecast.controllers;
+package homecast.api.controllers;
 
 import homecast.configuration.ServerInfo;
-import homecast.dto.ServerVideosDTO;
-import homecast.services.VideoDirectoryService;
-import homecast.services.VideoService;
+import homecast.api.dto.ServerVideosDTO;
+import homecast.api.services.VideoDirectoryService;
+import homecast.api.services.VideoService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

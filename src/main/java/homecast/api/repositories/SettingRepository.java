@@ -1,6 +1,6 @@
-package homecast.repositories;
+package homecast.api.repositories;
 
-import homecast.models.Setting;
+import homecast.api.models.Setting;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

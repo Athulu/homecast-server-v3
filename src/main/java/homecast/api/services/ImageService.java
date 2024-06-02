@@ -1,6 +1,6 @@
-package homecast.services;
+package homecast.api.services;
 
-import homecast.repositories.SourceRepository;
+import homecast.api.repositories.ImageRepository;
 import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class SourceService {
-    private static final Logger LOG = LoggerFactory.getLogger(SourceService.class);
+public class ImageService {
+    private static final Logger LOG = LoggerFactory.getLogger(ImageService.class);
     private final EntityManager entityManager;
-    private final SourceRepository sourceRepository;
+    private final ImageRepository imageRepository;
 }
