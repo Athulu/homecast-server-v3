@@ -6,10 +6,9 @@ import homecast.api.services.VideoDirectoryService;
 import homecast.api.services.VideoService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/video")
 @AllArgsConstructor
 public class VideoController {
