@@ -1,4 +1,4 @@
-package homecast.configuration;
+package homecast.configuration.server;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

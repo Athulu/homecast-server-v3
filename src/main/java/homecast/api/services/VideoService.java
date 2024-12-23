@@ -5,6 +5,7 @@ import homecast.api.dto.VideoDTO;
 import homecast.api.models.Video;
 import homecast.api.models.VideoDirectory;
 import homecast.api.repositories.VideoRepository;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +18,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 @Service
@@ -39,6 +41,12 @@ public class VideoService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Transactional
+    public void testUpdate() {
+        Optional<Video> video = videoRepository.findVideoByVideoId(2);
+        video.get().setDuration(video.get().getDuration() + 1);
     }
 
     public void updateVideosData() {
@@ -66,7 +74,7 @@ public class VideoService {
         return videoNameList;
     }
 
-    public List<VideoDTO> getAllVideos(){
+    public List<VideoDTO> getAllVideos() {
         List<VideoDTO> videoDTOList = new LinkedList<>();
         for (Video video : videoRepository.findAll()) {
             videoDTOList.add(VideoDTO.builder()

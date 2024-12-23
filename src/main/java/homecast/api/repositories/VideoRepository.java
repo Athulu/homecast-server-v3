@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface VideoRepository extends CrudRepository<Video, Long> {
     List<Video> findAll();
 
-    Optional<Video> findVideoByVideoId(Long videoId);
+    Optional<Video> findVideoByVideoId(Integer videoId);
 }

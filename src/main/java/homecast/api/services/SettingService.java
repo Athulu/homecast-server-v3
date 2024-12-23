@@ -1,6 +1,6 @@
 package homecast.api.services;
 
-import homecast.configuration.SettingProperty;
+import homecast.configuration.settings.SettingProperty;
 import homecast.api.models.Setting;
 import homecast.api.repositories.SettingRepository;
 import jakarta.annotation.PostConstruct;

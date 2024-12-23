@@ -1,12 +1,12 @@
-package homecast.configuration;
+package homecast.configuration.settings;
 
 
-import homecast.configuration.utility.TypeEnum;
+import homecast.configuration.settings.utility.TypeEnum;
 import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static homecast.configuration.utility.TypeEnum.STRING;
+import static homecast.configuration.settings.utility.TypeEnum.STRING;
 
 public enum SettingProperty {
     VIDEOS_DIRECTORY("VIDEOS_DIRECTORY", STRING),
