@@ -36,4 +36,7 @@ public class SettingService {
         }
         LOG.info("END initialize settings");
     }
+    public void initializeSetting(String property, String value) {
+        SettingProperty.init(SettingProperty.valueOf(property), value);
+    }
 }

@@ -88,6 +88,19 @@
             <artifactId>liquibase-core</artifactId>
             <version>4.27.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.fusesource.jansi</groupId>
+            <artifactId>jansi</artifactId>
+            <version>2.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.2</version> <!-- Upewnij się, że to aktualna wersja -->
+        </dependency>
+
     </dependencies>
 
     <build>

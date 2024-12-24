@@ -1,6 +1,8 @@
 package homecast.configuration.settings;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import homecast.api.services.SettingService;
+import homecast.configuration.settings.utility.SettingChangeNotifyModel;
 import lombok.AllArgsConstructor;
 import org.postgresql.PGConnection;
 import org.slf4j.Logger;
@@ -28,18 +30,27 @@ public class PostgresNotifyListener {
 
             try {
                 connection = jdbcTemplate.getDataSource().getConnection().unwrap(Connection.class);
-                connection.setAutoCommit(true);  // Make sure to set autocommit mode for LISTEN/NOTIFY to work
+                connection.setAutoCommit(true);
                 stmt = connection.createStatement();
 
-                stmt.execute("LISTEN settings_changes;");
+                stmt.execute("LISTEN settings_changes_channel;");
                 pgConnection = (PGConnection) connection;
 
                 while (true) {
                     var notifications = pgConnection.getNotifications();
                     if (notifications != null) {
                         for (var notification : notifications) {
-                            LOG.info("Received notification: " + notification.getParameter());
-                            settingService.initializeSettings();
+                            String json = notification.getParameter();
+                            LOG.info("Received notification JSON: " + json);
+                            ObjectMapper objectMapper = new ObjectMapper();
+                            try {
+                                SettingChangeNotifyModel model = objectMapper.readValue(json, SettingChangeNotifyModel.class);
+                                LOG.info("Setting change notify - old model: " + model.toStringOldModel());
+                                LOG.info("Setting change notify - new model: " + model.toStringNewModel());
+                                settingService.initializeSetting(model.getNewProperty(), model.getNewValue());
+                            } catch (Exception e) {
+                                LOG.error("Error parsing JSON notification: ", e);
+                            }
                         }
                     }
                     Thread.sleep(1000);
