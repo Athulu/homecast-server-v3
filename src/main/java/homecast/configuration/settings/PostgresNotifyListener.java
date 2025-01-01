@@ -2,7 +2,7 @@ package homecast.configuration.settings;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import homecast.api.services.SettingService;
-import homecast.configuration.settings.utility.SettingChangeNotifyModel;
+import homecast.configuration.settings.model.SettingChangeNotifyModel;
 import lombok.AllArgsConstructor;
 import org.postgresql.PGConnection;
 import org.slf4j.Logger;
@@ -45,9 +45,9 @@ public class PostgresNotifyListener {
                             ObjectMapper objectMapper = new ObjectMapper();
                             try {
                                 SettingChangeNotifyModel model = objectMapper.readValue(json, SettingChangeNotifyModel.class);
-                                LOG.info("Setting change notify - old model: " + model.toStringOldModel());
-                                LOG.info("Setting change notify - new model: " + model.toStringNewModel());
-                                settingService.initializeSetting(model.getNewProperty(), model.getNewValue());
+                                LOG.info(model.getOperation() + " setting: " + model);
+
+                                settingService.initializeSetting(model.getProperty(), model.getValue());
                             } catch (Exception e) {
                                 LOG.error("Error parsing JSON notification: ", e);
                             }
