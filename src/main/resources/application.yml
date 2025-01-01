@@ -8,9 +8,9 @@ spring:
   properties:
     hibernate:
       dialect: org.hibernate.dialect.PostgreSQLDialect
-  liquibase:
-    change-log: classpath:/liquibase/changelog.xml
-    enabled: true
+  flyway:
+    baselineOnMigrate: true
+    execute-in-transaction: true
 application:
   title: ${application.title}
   version: ${application.version}

@@ -8,4 +8,4 @@ spring:
     password: xxx
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update

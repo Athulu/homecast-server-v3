@@ -8,4 +8,8 @@ spring:
     password: xxx
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+logging:
+  level:
+    org.flywaydb: DEBUG
+    org.springframework.boot.autoconfigure.flyway: DEBUG
